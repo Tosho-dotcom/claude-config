@@ -50,3 +50,5 @@ After every feature addition, bug fix, or meaningful change in any project, push
 3. Push to the remote (`git push`)
 
 If the project is not yet linked to a GitHub repo, create one via `gh repo create` and push the initial commit before continuing with the workflow above.
+
+**CLAUDE.md updates:** Whenever this file is modified, also commit and push it to its dedicated repo at `C:\Users\Tomislav\Desktop\Claude projects\` (GitHub: `Tosho-dotcom/claude-config`). Stage only `CLAUDE.md`, commit with a message describing what changed, and push.
