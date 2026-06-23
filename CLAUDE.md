@@ -43,7 +43,13 @@ When adding a new category, update both `EXPENSE_CATEGORIES` and `CATEGORY_COLOR
 
 ## GitHub Workflow
 
-After every feature addition, bug fix, or meaningful change in any project, push the changes to the user's GitHub profile (tohodic). Steps:
+Do NOT automatically push to GitHub after every change. Instead:
+
+- After a significant change (new feature, larger refactor, notable bug fix), ask the user: "Želiš li pushati ove izmjene na GitHub?"
+- Before ending the conversation, always ask: "Želiš li pushati sve izmjene na GitHub prije nego završimo?"
+- Only push if the user confirms.
+
+When the user confirms, follow these steps:
 
 1. Stage the relevant files (`git add <files>`)
 2. Commit with a clear message describing what changed
