@@ -1,0 +1,137 @@
+/*
+  Beanform — Design Tokens
+  Stack: Next.js 16 App Router · Tailwind CSS v4 · TypeScript
+
+  Usage: Add `@import "../docs/design/tokens.css";` at the top of globals.css,
+  then replace the existing @theme block with the one below.
+  Every --color-* token becomes bg-*, text-*, border-* utility classes.
+  Every --font-* token becomes font-* utility classes.
+  Every --text-* token becomes text-* utility classes.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap');
+
+@theme {
+  /* ─── Surface Colors ───────────────────────────────────────────────────── */
+  /* The dark green family — primary page backgrounds and layered surfaces.  */
+  --color-espresso:    #141A12;   /* deepest: overlays, dropdowns, modals    */
+  --color-forest:      #263328;   /* primary page background                 */
+  --color-moss:        #344539;   /* raised surfaces: cards, panels          */
+  --color-fern:        #4A6152;   /* subtle: borders, dividers               */
+
+  /* ─── Accent Colors ────────────────────────────────────────────────────── */
+  /* Warm gold pulled directly from the logo and kraft cup palette.          */
+  --color-gold:        #C49A3C;   /* primary accent — buttons, active states */
+  --color-gold-light:  #D9B86A;   /* hover state for gold elements           */
+  --color-gold-dim:    #8A6A28;   /* gold at lower luminance: borders, rings */
+
+  /* ─── Text Colors ──────────────────────────────────────────────────────── */
+  --color-chalk:       #F7F2EB;   /* primary text on dark backgrounds        */
+  --color-parchment:   #E8D8BC;   /* secondary text, captions, labels        */
+  --color-latte:       #A8845A;   /* tertiary: placeholders, disabled        */
+
+  /* ─── Semantic Aliases ─────────────────────────────────────────────────── */
+  --color-surface:         #263328;   /* = forest */
+  --color-surface-raised:  #344539;   /* = moss   */
+  --color-border:          #4A6152;   /* = fern   */
+  --color-text:            #F7F2EB;   /* = chalk  */
+  --color-text-muted:      #E8D8BC;   /* = parchment */
+  --color-accent:          #C49A3C;   /* = gold   */
+  --color-accent-hover:    #D9B86A;   /* = gold-light */
+
+  /* ─── Typography — Families ────────────────────────────────────────────── */
+  /*
+    Display: Cormorant Garamond
+      High-contrast old-style serif. Used ONLY for headlines and the brand
+      name. At 60px+ the hairline strokes become architectural against dark
+      backgrounds — that optical drama is the signature of this design.
+
+    Body: DM Sans
+      Geometric humanist sans. Readable at 14–18px, neutral enough to let
+      the display type lead, modern enough to signal quality.
+
+    Mono: Geist Mono (already loaded by Next.js layout)
+      Reserved for prices, quantities, data — anything that benefits from
+      tabular alignment.
+  */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    var(--font-geist-mono), 'Courier New', monospace;
+
+  /* ─── Type Scale ────────────────────────────────────────────────────────── */
+  /*
+    Two separate scales share tokens:
+    - xs through xl  → body/UI text (DM Sans)
+    - 2xl through 7xl → display text (Cormorant Garamond)
+    Never use display sizes with the body font or vice versa.
+  */
+  --text-xs:    0.75rem;    /*  12px — captions, legal, timestamps         */
+  --text-sm:    0.875rem;   /*  14px — labels, secondary UI                */
+  --text-base:  1rem;       /*  16px — body copy default                   */
+  --text-lg:    1.125rem;   /*  18px — lead paragraphs, intro text         */
+  --text-xl:    1.375rem;   /*  22px — large UI labels, sub-headings       */
+  --text-2xl:   1.75rem;    /*  28px — section sub-headings (Cormorant)    */
+  --text-3xl:   2.25rem;    /*  36px — section headings (Cormorant)        */
+  --text-4xl:   3rem;       /*  48px — page headings (Cormorant)           */
+  --text-5xl:   4rem;       /*  64px — large feature headings (Cormorant)  */
+  --text-6xl:   5.5rem;     /*  88px — hero sub-headline (Cormorant)       */
+  --text-7xl:   7.5rem;     /* 120px — hero display only (Cormorant)       */
+
+  /* ─── Line Heights ──────────────────────────────────────────────────────── */
+  --leading-tight:   1.05;   /* display type at large sizes     */
+  --leading-snug:    1.2;    /* headings h2–h3                  */
+  --leading-normal:  1.5;    /* body copy default               */
+  --leading-relaxed: 1.75;   /* long-form reading paragraphs    */
+
+  /* ─── Letter Spacing ────────────────────────────────────────────────────── */
+  --tracking-display: -0.025em;  /* tighten large Cormorant headlines        */
+  --tracking-heading: -0.01em;   /* moderate tightening for h2–h3            */
+  --tracking-body:     0em;      /* default — DM Sans sets its own           */
+  --tracking-caps:     0.14em;   /* ALL-CAPS eyebrows/overlines              */
+  --tracking-wide:     0.06em;   /* spaced labels                            */
+
+  /* ─── Spacing Scale ─────────────────────────────────────────────────────── */
+  --spacing-1:   0.25rem;   /*   4px */
+  --spacing-2:   0.5rem;    /*   8px */
+  --spacing-3:   0.75rem;   /*  12px */
+  --spacing-4:   1rem;      /*  16px */
+  --spacing-5:   1.25rem;   /*  20px */
+  --spacing-6:   1.5rem;    /*  24px */
+  --spacing-8:   2rem;      /*  32px */
+  --spacing-10:  2.5rem;    /*  40px */
+  --spacing-12:  3rem;      /*  48px */
+  --spacing-16:  4rem;      /*  64px */
+  --spacing-20:  5rem;      /*  80px */
+  --spacing-24:  6rem;      /*  96px */
+  --spacing-32:  8rem;      /* 128px */
+  --spacing-40:  10rem;     /* 160px */
+
+  /* ─── Border Radius ─────────────────────────────────────────────────────── */
+  --radius-sm:   0.25rem;    /*  4px — tags, badges, chips        */
+  --radius-md:   0.5rem;     /*  8px — inputs, small cards        */
+  --radius-lg:   0.875rem;   /* 14px — cards, panels              */
+  --radius-xl:   1.5rem;     /* 24px — large feature cards        */
+  --radius-full: 9999px;     /* pills, circular elements          */
+
+  /* ─── Shadows ────────────────────────────────────────────────────────────── */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.35), 0 1px 2px rgba(0,0,0,0.25);
+  --shadow-md:   0 4px 12px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.28);
+  --shadow-lg:   0 12px 36px rgba(0,0,0,0.55), 0 4px 14px rgba(0,0,0,0.32);
+  --shadow-glow: 0 0 28px rgba(196,154,60,0.30);  /* gold glow — CTA buttons */
+
+  /* ─── Motion ─────────────────────────────────────────────────────────────── */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast:  150ms;
+  --duration-base:  250ms;
+  --duration-slow:  400ms;
+  --duration-reveal: 700ms;
+
+  /* ─── Z-index Layers ─────────────────────────────────────────────────────── */
+  --z-below:  -1;
+  --z-base:    0;
+  --z-raised: 10;
+  --z-nav:   100;
+  --z-modal: 200;
+  --z-toast: 300;
+}
